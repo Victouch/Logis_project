@@ -24,6 +24,7 @@ urlpatterns = [
     path('', include("home.urls", namespace='home')),
     path('', include("about.urls", namespace="about")),
     path("", include("services.urls", namespace="services")),
+    path('', include("pricing.urls", namespace='pricing')),
 ]
 
 if settings.DEBUG:

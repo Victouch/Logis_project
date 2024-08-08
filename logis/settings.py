@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'services',
     'pricing',
     'contact',
+    'get_a_quote',
 ]
 
 MIDDLEWARE = [

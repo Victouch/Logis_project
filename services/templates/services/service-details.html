@@ -1,12 +1,11 @@
 {% load static %}
-
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
-  <title>Get A Quote - Logis Bootstrap Template</title>
+  <title>Service Details - Logis Bootstrap Template</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
 
@@ -22,7 +21,7 @@
   <!-- Vendor CSS Files -->
   <link href="{% static 'vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
   <link href="{% static 'vendor/bootstrap-icons/bootstrap-icons.css' %}" rel="stylesheet">
-  <link href="{% static 'vendor/aos/aos.css' %}" rel="stylesheet">
+  <link href="{% static 'vendor/aos/aos.css" rel="stylesheet' %}">
   <link href="{% static 'vendor/fontawesome-free/css/all.min.css' %}" rel="stylesheet">
   <link href="{% static 'vendor/glightbox/css/glightbox.min.css' %}" rel="stylesheet">
   <link href="{% static 'vendor/swiper/swiper-bundle.min.css' %}" rel="stylesheet">
@@ -39,7 +38,7 @@
   ======================================================== -->
 </head>
 
-<body class="get-a-quote-page">
+<body class="service-details-page">
 
   <header id="header" class="header d-flex align-items-center fixed-top">
     <div class="container-fluid container-xl position-relative d-flex align-items-center">
@@ -54,7 +53,7 @@
         <ul>
           <li><a href="{% url 'home:home' %}">Home<br></a></li>
           <li><a href="{% url 'about:about' %}">About</a></li>
-          <li><a href="{% url 'services:services' %}">Services</a></li>
+          <li><a href="{% url 'services:services' %}services.html">Services</a></li>
           <li><a href="{% url 'pricing:pricing' %}">Pricing</a></li>
           <li class="dropdown"><a href="#"><span>Dropdown</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
             <ul>
@@ -76,86 +75,61 @@
     <!-- Page Title -->
     <div class="page-title dark-background" data-aos="fade" style="background-image: url(img/page-title-bg.jpg);">
       <div class="container position-relative">
-        <h1>Get a Quote</h1>
+        <h1>Service Details</h1>
         <p>Esse dolorum voluptatum ullam est sint nemo et est ipsa porro placeat quibusdam quia assumenda numquam molestias.</p>
         <nav class="breadcrumbs">
           <ol>
             <li><a href="{% url 'home:home' %}">Home</a></li>
-            <li class="current">Get A Quote</li>
+            <li class="current">Service Details</li>
           </ol>
         </nav>
       </div>
     </div><!-- End Page Title -->
 
-    <!-- Get A Quote Section -->
-    <section id="get-a-quote" class="get-a-quote section">
+    <!-- Service Details Section -->
+    <section id="service-details" class="service-details section">
 
       <div class="container">
 
-        <div class="row g-0" data-aos="fade-up" data-aos-delay="100">
+        <div class="row gy-4">
 
-          <div class="col-lg-5 quote-bg" style="background-image: url(img/quote-bg.jpg);"></div>
+          <div class="col-lg-4" data-aos="fade-up" data-aos-delay="100">
+            <div class="services-list">
+              <a href="#" class="active">Web Design</a>
+              <a href="#">Software Development</a>
+              <a href="#">Product Management</a>
+              <a href="#">Graphic Design</a>
+              <a href="#">Marketing</a>
+            </div>
 
-          <div class="col-lg-7" data-aos="fade-up" data-aos-delay="200">
-            <form action="forms/get-a-quote.php" method="post" class="php-email-form">
-              <h3>Get a quote</h3>
-              <p>Vel nobis odio laboriosam et hic voluptatem. Inventore vitae totam. Rerum repellendus enim linead sero park flows.</p>
+            <h4>Enim qui eos rerum in delectus</h4>
+            <p>Nam voluptatem quasi numquam quas fugiat ex temporibus quo est. Quia aut quam quod facere ut non occaecati ut aut. Nesciunt mollitia illum tempore corrupti sed eum reiciendis. Maxime modi rerum.</p>
+          </div>
 
-              <div class="row gy-4">
-
-                <div class="col-md-6">
-                  <input type="text" name="departure" class="form-control" placeholder="City of Departure" required="">
-                </div>
-
-                <div class="col-md-6">
-                  <input type="text" name="delivery" class="form-control" placeholder="Delivery City" required="">
-                </div>
-
-                <div class="col-md-6">
-                  <input type="text" name="weight" class="form-control" placeholder="Total Weight (kg)" required="">
-                </div>
-
-                <div class="col-md-6">
-                  <input type="text" name="dimensions" class="form-control" placeholder="Dimensions (cm)" required="">
-                </div>
-
-                <div class="col-lg-12">
-                  <h4>Your Personal Details</h4>
-                </div>
-
-                <div class="col-12">
-                  <input type="text" name="name" class="form-control" placeholder="Name" required="">
-                </div>
-
-                <div class="col-12 ">
-                  <input type="email" class="form-control" name="email" placeholder="Email" required="">
-                </div>
-
-                <div class="col-12">
-                  <input type="text" class="form-control" name="phone" placeholder="Phone" required="">
-                </div>
-
-                <div class="col-12">
-                  <textarea class="form-control" name="message" rows="6" placeholder="Message" required=""></textarea>
-                </div>
-
-                <div class="col-12 text-center">
-                  <div class="loading">Loading</div>
-                  <div class="error-message"></div>
-                  <div class="sent-message">Your quote request has been sent successfully. Thank you!</div>
-
-                  <button type="submit">Get a quote</button>
-                </div>
-
-              </div>
-            </form>
-          </div><!-- End Quote Form -->
+          <div class="col-lg-8" data-aos="fade-up" data-aos-delay="200">
+            <img src="{% static 'img/services.jpg' %}" alt="" class="img-fluid services-img">
+            <h3>Temporibus et in vero dicta aut eius lidero plastis trand lined voluptas dolorem ut voluptas</h3>
+            <p>
+              Blanditiis voluptate odit ex error ea sed officiis deserunt. Cupiditate non consequatur et doloremque consequuntur. Accusantium labore reprehenderit error temporibus saepe perferendis fuga doloribus vero. Qui omnis quo sit. Dolorem architecto eum et quos deleniti officia qui.
+            </p>
+            <ul>
+              <li><i class="bi bi-check-circle"></i> <span>Aut eum totam accusantium voluptatem.</span></li>
+              <li><i class="bi bi-check-circle"></i> <span>Assumenda et porro nisi nihil nesciunt voluptatibus.</span></li>
+              <li><i class="bi bi-check-circle"></i> <span>Ullamco laboris nisi ut aliquip ex ea</span></li>
+            </ul>
+            <p>
+              Est reprehenderit voluptatem necessitatibus asperiores neque sed ea illo. Deleniti quam sequi optio iste veniam repellat odit. Aut pariatur itaque nesciunt fuga.
+            </p>
+            <p>
+              Sunt rem odit accusantium omnis perspiciatis officia. Laboriosam aut consequuntur recusandae mollitia doloremque est architecto cupiditate ullam. Quia est ut occaecati fuga. Distinctio ex repellendus eveniet velit sint quia sapiente cumque. Et ipsa perferendis ut nihil. Laboriosam vel voluptates tenetur nostrum. Eaque iusto cupiditate et totam et quia dolorum in. Sunt molestiae ipsum at consequatur vero. Architecto ut pariatur autem ad non cumque nesciunt qui maxime. Sunt eum quia impedit dolore alias explicabo ea.
+            </p>
+          </div>
 
         </div>
 
       </div>
 
-    </section><!-- /Get A Quote Section -->
+    </section><!-- /Service Details Section -->
 
   </main>
 

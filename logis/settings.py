@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     'pricing',
     'contact',
     'get_a_quote',
+    'user',
 ]
 
 MIDDLEWARE = [

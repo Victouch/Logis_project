@@ -9,5 +9,6 @@ def home(request):
         search = request.POST.get("search")
         searches = Search(searchs=search)
         searches.save()
+        
 
     return render(request, "home/index.html")

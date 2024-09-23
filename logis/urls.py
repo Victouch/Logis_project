@@ -27,6 +27,7 @@ urlpatterns = [
     path('', include("pricing.urls", namespace="pricing")),
     path("", include("contact.urls", namespace="contact")),
     path("", include("get_a_quote.urls", namespace="get_a_quote")),
+    path('', include("user.urls", namespace="user"))
 ]
 
 if settings.DEBUG:

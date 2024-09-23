@@ -1,5 +1,4 @@
 {% load static %}
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -57,7 +56,6 @@
           <li><a href="{% url 'services:services' %}">Services</a></li>
           <li><a href="{% url 'pricing:pricing' %}">Pricing</a></li>
           <li><a href="{% url 'contact:contact' %}">Contact</a></li>
-          <li><a href="{% url 'get_a_quote:get_a_quote' %}">Get a Quote</a></li>
         </ul>
         <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
       </nav>
@@ -83,75 +81,82 @@
       </div>
     </div><!-- End Page Title -->
 
-    <!-- Get A Quote Section -->
-    <section id="get-a-quote" class="get-a-quote section">
-
-      <div class="container">
-
-        <div class="row g-0" data-aos="fade-up" data-aos-delay="100">
-
-          <div class="col-lg-5 quote-bg" style="background-image: url(img/quote-bg.jpg);"></div>
-
-          <div class="col-lg-7" data-aos="fade-up" data-aos-delay="200">
-            <form action="forms/get-a-quote.php" method="post" class="php-email-form">
-              <h3>Get a quote</h3>
-              <p>Vel nobis odio laboriosam et hic voluptatem. Inventore vitae totam. Rerum repellendus enim linead sero park flows.</p>
-
-              <div class="row gy-4">
-
-                <div class="col-md-6">
-                  <input type="text" name="departure" class="form-control" placeholder="City of Departure" required="">
-                </div>
-
-                <div class="col-md-6">
-                  <input type="text" name="delivery" class="form-control" placeholder="Delivery City" required="">
-                </div>
-
-                <div class="col-md-6">
-                  <input type="text" name="weight" class="form-control" placeholder="Total Weight (kg)" required="">
-                </div>
-
-                <div class="col-md-6">
-                  <input type="text" name="dimensions" class="form-control" placeholder="Dimensions (cm)" required="">
-                </div>
-
-                <div class="col-lg-12">
-                  <h4>Your Personal Details</h4>
-                </div>
-
-                <div class="col-12">
-                  <input type="text" name="name" class="form-control" placeholder="Name" required="">
-                </div>
-
-                <div class="col-12 ">
-                  <input type="email" class="form-control" name="email" placeholder="Email" required="">
-                </div>
-
-                <div class="col-12">
-                  <input type="text" class="form-control" name="phone" placeholder="Phone" required="">
-                </div>
-
-                <div class="col-12">
-                  <textarea class="form-control" name="message" rows="6" placeholder="Message" required=""></textarea>
-                </div>
-
-                <div class="col-12 text-center">
-                  <div class="loading">Loading</div>
-                  <div class="error-message"></div>
-                  <div class="sent-message">Your quote request has been sent successfully. Thank you!</div>
-
-                  <button type="submit">Get a quote</button>
-                </div>
-
-              </div>
-            </form>
-          </div><!-- End Quote Form -->
-
+     <!-- contact section -->
+     <section class="contact_section layout_padding">
+        <div class="container">
+          <div class="row">
+            <div class="custom_heading-container ">
+              <h2>
+                Request A call back
+              </h2>
+            </div>
+          </div>
         </div>
-
-      </div>
-
-    </section><!-- /Get A Quote Section -->
+        <div class="container layout_padding2">
+          <div class="row">
+            <div class="col-md-5">
+                <div>     
+                    <h1>Register</h1> 
+                    <form>
+                        <div class="mb-3">
+                            <label for="firstname" class="form-label">First Name</label>
+                            <input type="text" class="form-control" name="firstname" >
+                          </div>
+                        <div class="mb-3">
+                        <label for="lastname" class="form-label">Last Name</label>
+                        <input type="text" class="form-control" name="lastname" >
+                        </div>
+                        <div class="mb-3">
+                            <label for="exampleInputEmail1" class="form-label">Email Address</label>
+                            <input type="email" class="form-control" name="email" aria-describedby="emailHelp">
+                          </div>
+                        <div class="mb-3">
+                        <label for="Phone" class="form-label">Phone Number</label>
+                        <input type="tel" class="form-control" name="phone" maxLength="11">
+                        </div>
+                        <div class="mb-3">
+                          <label for="exampleInputPassword1" class="form-label">Password</label>
+                          <input type="password" class="form-control" name="password">
+                        </div>
+                        <!-- <button type="submit" class="btn btn-primary">Submit</button> -->
+                      </form>         
+                    {% if messages %}         
+                    <ul>             
+                        {% for message in messages %}                 
+                        <script>alert("{{ message }}")</script>             
+                        {% endfor %}         
+                    </ul>     
+                    {% endif %}               
+                    <form method="POST">         
+                        {% csrf_token %} 
+                     {% for field in form %}              
+                     <p>                 
+                        {{ field.label_tag }}<br>                  
+                        {{ field }}                  
+                        {% for error in field.errors %}              
+                        <p style="color: red">{{ error }}</p>                  
+                        {% endfor %}              
+                     </p>         
+                    {% endfor %} 
+                     <button type="submit" class="btn btn-primary">Sign up</button>     
+                    </form>          
+                    <p>If you already have an account, <a href="{% url 'user:user' %}">Sign in</a> instead.</p> 
+                </div> 
+            </div>
+            <div class="col-md-7">
+              <div class="detail-box">
+                <h3>
+                  Get Now Medicines
+                </h3>
+                <p>
+                  There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration
+                  in some form, by injected humour, or randomised words which don't look even slightly believable.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section><!-- /Get A Quote Section -->
 
   </main>
 
@@ -160,7 +165,7 @@
     <div class="container footer-top">
       <div class="row gy-4">
         <div class="col-lg-5 col-md-12 footer-about">
-          <a href="index.html" class="logo d-flex align-items-center">
+          <a href="{% url 'home:home' %}" class="logo d-flex align-items-center">
             <span class="sitename">Logis</span>
           </a>
           <p>Cras fermentum odio eu feugiat lide par naso tierra. Justo eget nada terra videa magna derita valies darta donna mare fermentum iaculis eu non diam phasellus.</p>

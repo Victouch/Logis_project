@@ -93,7 +93,8 @@
           <div class="col-lg-5 quote-bg" style="background-image: url(img/quote-bg.jpg);"></div>
 
           <div class="col-lg-7" data-aos="fade-up" data-aos-delay="200">
-            <form action="forms/get-a-quote.php" method="post" class="php-email-form">
+            <form action="{% url 'get_a_quote:get_a_quote' %}" method="post" class="php-email-form">
+              {% csrf_token %}
               <h3>Get a quote</h3>
               <p>Vel nobis odio laboriosam et hic voluptatem. Inventore vitae totam. Rerum repellendus enim linead sero park flows.</p>
 

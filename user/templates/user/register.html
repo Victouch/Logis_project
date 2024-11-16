@@ -97,8 +97,10 @@
             <div class="col-md-5">
                 <div>     
                     <h1>Register</h1> 
-                    <form>
-                        <div class="mb-3">
+                    <form method="POST" action="">
+                      {% csrf_token %}
+                      
+                        <!-- <div class="mb-3">
                             <label for="firstname" class="form-label">First Name</label>
                             <input type="text" class="form-control" name="firstname" >
                           </div>
@@ -117,28 +119,28 @@
                         <div class="mb-3">
                           <label for="exampleInputPassword1" class="form-label">Password</label>
                           <input type="password" class="form-control" name="password">
-                        </div>
+                        </div> -->
                         <!-- <button type="submit" class="btn btn-primary">Submit</button> -->
-                      </form>         
-                    {% if messages %}         
-                    <ul>             
-                        {% for message in messages %}                 
-                        <script>alert("{{ message }}")</script>             
-                        {% endfor %}         
-                    </ul>     
-                    {% endif %}               
-                    <form method="POST">         
-                        {% csrf_token %} 
-                     {% for field in form %}              
-                     <p>                 
-                        {{ field.label_tag }}<br>                  
-                        {{ field }}                  
-                        {% for error in field.errors %}              
-                        <p style="color: red">{{ error }}</p>                  
-                        {% endfor %}              
-                     </p>         
-                    {% endfor %} 
-                     <button type="submit" class="btn btn-primary">Sign up</button>     
+                            
+                        <!-- {% if messages %}         
+                        <ul>             
+                            {% for message in messages %}                 
+                            <script>alert("{{ message }}")</script>             
+                            {% endfor %}         
+                        </ul>     
+                        {% endif %}                -->
+                                
+                             
+                        {% for field in form %}              
+                        <p>                 
+                            {{ field.label_tag }}<br>                  
+                            {{ field }}                  
+                            {% for error in field.errors %}              
+                            <p style="color: red">{{ error }}</p>                  
+                            {% endfor %}              
+                        </p>         
+                        {% endfor %}
+                        <button type="submit" class="btn btn-primary" name="Create User">Sign up</button>     
                     </form>          
                     <p>If you already have an account, <a href="{% url 'user:user' %}">Sign in</a> instead.</p> 
                 </div> 

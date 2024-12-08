@@ -61,7 +61,18 @@
         <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
       </nav>
 
-      <a class="btn-getstarted" href="{% url 'user:user' %}">Sign in</a>
+      {% if user.is_authenticated %}
+      <li class="nav-item">
+        <a class="btn-getstarted" href="{% url 'home:home' %}"> {{request.user}} </a>
+      </li>
+      <li class="nav-item">
+        <a href="{% url 'user:logout' %}">Log out</a>
+      </li>
+      {% else %}
+      <li class="nav-item">
+        <a class="btn-getstarted" href="{% url 'user:sign_in' %}">Sign in</a>
+      </li>
+      {% endif %}
 
     </div>
   </header>

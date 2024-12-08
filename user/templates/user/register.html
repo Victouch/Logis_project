@@ -60,7 +60,7 @@
         <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
       </nav>
 
-      <a class="btn-getstarted" href="{% url 'user:user' %}">Sign in</a>
+      <a class="btn-getstarted" href="{% url 'user:sign_in' %}">Sign in</a>
 
     </div>
   </header>
@@ -142,7 +142,7 @@
                         {% endfor %}
                         <button type="submit" class="btn btn-primary" name="Create User">Sign up</button>     
                     </form>          
-                    <p>If you already have an account, <a href="{% url 'user:user' %}">Sign in</a> instead.</p> 
+                    <p>If you already have an account, <a href="{% url 'user:sign_in' %}">Sign in</a> instead.</p> 
                 </div> 
             </div>
             <div class="col-md-7">

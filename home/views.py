@@ -5,9 +5,9 @@ from .models import Search
 
 def home(request):
 
-    if request.POST.get("search"):
+    if request.method == "POST" and request.POST.get("search"):
         search = request.POST.get("search")
-        searches = Search(searchs=search)
+        searches = Search(search=search)
         searches.save()
         
 

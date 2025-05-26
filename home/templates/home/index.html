@@ -92,9 +92,9 @@
             <h2 data-aos="fade-up">Your Lightning Fast Delivery Partner</h2>
             <p data-aos="fade-up" data-aos-delay="100">Facere distinctio molestiae nisi fugit tenetur repellat non praesentium nesciunt optio quis sit odio nemo quisquam. eius quos reiciendis eum vel eum voluptatem eum maiores eaque id optio ullam occaecati odio est possimus vel reprehenderit</p>
 
-            <form action="{% url 'home:home' %}" class="form-search d-flex align-items-stretch mb-3" data-aos="fade-up" data-aos-delay="200" method="post">
+            <form action="{% url 'home:home' %}" class="form-search d-flex align-items-stretch mb-3" data-aos="fade-up" data-aos-delay="200" method="POST">
               {% csrf_token %}
-              <input type="text" class="form-control" placeholder="Your ZIP code or City. e.g. New York">
+              <input type="text" class="form-control" placeholder="Your ZIP code or City. e.g. New York" name="search">
               <button type="submit" class="btn btn-primary">Search</button>
             </form>
 

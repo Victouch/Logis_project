@@ -92,11 +92,26 @@
             <h2 data-aos="fade-up">Your Lightning Fast Delivery Partner</h2>
             <p data-aos="fade-up" data-aos-delay="100">Facere distinctio molestiae nisi fugit tenetur repellat non praesentium nesciunt optio quis sit odio nemo quisquam. eius quos reiciendis eum vel eum voluptatem eum maiores eaque id optio ullam occaecati odio est possimus vel reprehenderit</p>
 
-            <form action="{% url 'home:home' %}" class="form-search d-flex align-items-stretch mb-3" data-aos="fade-up" data-aos-delay="200" method="POST">
-              {% csrf_token %}
-              <input type="text" class="form-control" placeholder="Your ZIP code or City. e.g. New York" name="search">
+            <form action="{% url 'home:home' %}" class="form-search d-flex align-items-stretch mb-3" data-aos="fade-up" data-aos-delay="200" method="GET">
+              
+              <input type="text" class="form-control" placeholder="Your ZIP code or City. e.g. New York" name="search" value="{{ query|default:'' }}">
               <button type="submit" class="btn btn-primary">Search</button>
             </form>
+            {% if query %}
+              <h3>Results for "{{ query }}"</h3>
+
+              {% if results %}
+                <ul>
+                  {% for item in results %}
+                    <li>{{ item }}</li>
+                  {% endfor %}
+                </ul>
+              {% else %}
+                <p>No matching results found.</p>
+              {% endif %}
+            {% endif %}
+            <p>Search complete — {{ results|length }} results found.</p>
+            <pre>{{ results }}</pre>
 
             <div class="row gy-4" data-aos="fade-up" data-aos-delay="300">
 

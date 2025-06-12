@@ -105,7 +105,7 @@
                 </ul>     
                 {% endif %}               
                 <form method="POST" action="">
-                  {% csrf_token %}
+                    {% csrf_token %}
 
                     <div class="mb-3">
                       <label for="exampleInputEmail1" class="form-label">Username</label>
@@ -116,7 +116,7 @@
                       <input type="password" class="form-control" name="password">
                     </div>
                     <button type="submit" class="btn btn-primary">Submit</button>
-                  </form>         
+                </form>         
                 <p>If you don't have an account, <a href="{% url 'user:register' %}">Sign up</a> instead.</p> 
             </div> 
         </div>

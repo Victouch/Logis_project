@@ -1,1 +1,1 @@
-web: gunicorn logis-project.wsgi --log-file -
+web: gunicorn logis.wsgi --log-file -

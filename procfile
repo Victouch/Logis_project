@@ -1,0 +1,1 @@
+web: gunicorn logis-project.wsgi --log-file -

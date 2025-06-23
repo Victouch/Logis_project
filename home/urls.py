@@ -4,7 +4,8 @@ from . import views
 app_name="home"
 
 urlpatterns = [
-    path("home/", views.home, name="home"),
+    path('', views.home, name="home"),         # for https://yourapp.herokuapp.com/
+    path('home/', views.home, name="home_alt") # optional: keeps /home/ working
 ]
 
 
